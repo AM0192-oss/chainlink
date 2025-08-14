@@ -5,7 +5,7 @@ import (
 
 	ag_binary "github.com/gagliardetto/binary"
 
-	"github.com/smartcontractkit/chainlink-ccip/chains/solana/gobindings/test_ccip_receiver"
+	"github.com/smartcontractkit/chainlink-ccip/chains/solana/gobindings/latest/test_ccip_receiver"
 )
 
 // The generated go bindings reference to BaseState which is marked as an account on it's own
