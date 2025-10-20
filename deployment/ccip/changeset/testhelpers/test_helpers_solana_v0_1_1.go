@@ -234,9 +234,9 @@ func DeployTransferableTokenSolanaV0_1_1(
 						ChainSelector: solChainSel,
 						SetPoolTokenConfigs: []ccipChangeSetSolanaV0_1_1.SetPoolTokenConfig{
 							{
-								TokenPubKey:     solTokenAddress,
-								PoolType:        bnm,
-								Metadata:        shared.CLLMetadata,
+								TokenPubKey: solTokenAddress,
+								PoolType:    bnm,
+								Metadata:    shared.CLLMetadata,
 							},
 						},
 					},

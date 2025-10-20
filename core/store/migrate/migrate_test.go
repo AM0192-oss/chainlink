@@ -453,7 +453,7 @@ func TestNoTriggers(t *testing.T) {
 	_, db := heavyweight.FullTestDBEmptyV2(t, nil)
 
 	assert_num_triggers := func(expected int) {
-		row := db.DB.QueryRow("select count(*) from information_schema.triggers")
+		row := db.QueryRow("select count(*) from information_schema.triggers")
 		var count int
 		err := row.Scan(&count)
 

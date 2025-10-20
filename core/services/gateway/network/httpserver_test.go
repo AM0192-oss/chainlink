@@ -189,9 +189,9 @@ func TestHTTPServer_HandleRequest_CORSEnabled_FromNotAllowedOrigin(t *testing.T)
 	require.NoError(t, err)
 	require.Equal(t, http.StatusOK, resp.StatusCode)
 	require.Equal(t, []byte("response"), respBytes)
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Origin"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Methods"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Headers"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Origin"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Methods"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Headers"))
 }
 
 func TestHTTPServer_HandleRequest_CORSEnabled_FromNotAllowedOriginWildcards(t *testing.T) {
@@ -208,9 +208,9 @@ func TestHTTPServer_HandleRequest_CORSEnabled_FromNotAllowedOriginWildcards(t *t
 	require.NoError(t, err)
 	require.Equal(t, http.StatusOK, resp.StatusCode)
 	require.Equal(t, []byte("response"), respBytes)
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Origin"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Methods"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Headers"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Origin"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Methods"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Headers"))
 
 	handler.On("ProcessRequest", mock.Anything, mock.Anything, mock.Anything).Return([]byte("response"), 200)
 
@@ -220,9 +220,9 @@ func TestHTTPServer_HandleRequest_CORSEnabled_FromNotAllowedOriginWildcards(t *t
 	require.NoError(t, err)
 	require.Equal(t, http.StatusOK, resp.StatusCode)
 	require.Equal(t, []byte("response"), respBytes)
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Origin"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Methods"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Headers"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Origin"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Methods"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Headers"))
 
 	handler.On("ProcessRequest", mock.Anything, mock.Anything, mock.Anything).Return([]byte("response"), 200)
 
@@ -232,7 +232,7 @@ func TestHTTPServer_HandleRequest_CORSEnabled_FromNotAllowedOriginWildcards(t *t
 	require.NoError(t, err)
 	require.Equal(t, http.StatusOK, resp.StatusCode)
 	require.Equal(t, []byte("response"), respBytes)
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Origin"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Methods"))
-	require.Equal(t, "", resp.Header.Get("Access-Control-Allow-Headers"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Origin"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Methods"))
+	require.Empty(t, resp.Header.Get("Access-Control-Allow-Headers"))
 }
